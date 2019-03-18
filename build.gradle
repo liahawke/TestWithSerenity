@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.40")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'com.github.sherter.google-java-format' version '0.6'
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+group 'TestsWithSerenity'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'com.github.sherter.google-java-format'
+
+sourceCompatibility = 1.8
+
+googleJavaFormat {
+    options style: 'AOSP'
+}
+
+dependencies {
+    compile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'net.serenity-bdd', name: 'serenity-core', version: '2.0.40'
+    compile group: 'net.serenity-bdd', name: 'serenity-junit', version: '2.0.40'
+    compile group: 'org.assertj', name: 'assertj-core', version: '3.12.0'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.8'
+}
+gradle.startParameter.continueOnFailure = true
