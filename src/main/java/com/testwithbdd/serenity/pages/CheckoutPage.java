@@ -68,7 +68,7 @@ public class CheckoutPage extends AbstractPage {
 
     /** Check title if cart is empty */
     public void checkTitle() {
-        super.waitTillElementIsVisible(getDriver(), emptyCardMessage);
+        waitFor(emptyCardMessage);
         Assert.assertEquals("Card isn't empty!", EMPTY_CARD_MESSAGE, emptyCardMessage.getText());
     }
 }

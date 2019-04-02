@@ -15,7 +15,7 @@ public abstract class  AbstractPage extends PageObject {
     private WebElement loginLink;
 
     @FindBy(xpath = "//div[@id='block_top_menu']/ul/li/a[@title='T-shirts']")
-    public WebElement tshirtsTitle;
+    private WebElement tshirtsTitle;
 
     // Instance of ClothesCategories
     ClothesCategories clothes;

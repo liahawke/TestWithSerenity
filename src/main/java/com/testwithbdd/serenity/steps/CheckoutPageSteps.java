@@ -52,7 +52,6 @@ public class CheckoutPageSteps extends ScenarioSteps {
         onCheckoutPage().deleteProduct();
     }
 
-
     /**
      * Check title on empty cart
      */
